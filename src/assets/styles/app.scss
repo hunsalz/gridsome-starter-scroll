@@ -1,25 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap");
 
 /**
- * Colors & Variables
+ * Variables
  */
 
 :root {
-  --color-header-background: #1d98d3;
-  --color-header-color: #ffffff;
-  --color-header-highlight: #e0a625;
-  --color-content-color: #5bc0e8;
-  --color-content-highlight: #e0a625;
-  --color-scenery: #b4e4f5;
+  --color-header-color: #e3f3ff;
+  --color-header-background: #00616e;
+  --color-header-highlight: #ccff00;
+  --color-content-color: #45474d;
+  --color-content-background: #fefbf4;
+  --color-content-highlight: #ccff00;
+  --color-scenery: #f4f1eb;
 }
 
 html.dark {
+  --color-header-color: #f4fcfe;
   --color-header-background: #00616e;
-  --color-header-color: #e3f3ff;
   --color-header-highlight: #dd9023;
-  --color-content-color: #0f839a;
+  --color-content-color: #edeef1;
+  --color-content-background: #45474d;
   --color-content-highlight: #dd9023;
-  --color-scenery: #1897b3;
+  --color-scenery: #23262b;
 }
 
 /**
@@ -30,7 +32,8 @@ html.dark {
   transition-property: color, background-color, border-color;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
-  @apply text-light-300;
+  @apply text-light-300 
+  @apply text-content-color;
 }
 
 h1,
@@ -38,6 +41,7 @@ h2,
 h3,
 h4 {
   @apply text-light-300;
+  @apply text-content-color;
 }
 
 h1 {
@@ -118,8 +122,8 @@ blockquote {
   width: 1.25em;
 
   &.icon > .material-design-icon__svg {
-    height: 1em;
-    width: 1em;
+    height: 1.5em;
+    width: 1.5em;
   }
 
   &.icon-md > .material-design-icon__svg {
@@ -131,4 +135,12 @@ blockquote {
     height: 3em;
     width: 3em;
   }
+}
+
+.text-input {
+  @apply w-full rounded focus:ring-2 text-base focus:outline-none py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out;
+}
+
+.btn {
+  @apply flex mx-auto py-2 px-8 border-0 rounded text-base md:text-lg focus:outline-none hover:opacity-80;
 }
